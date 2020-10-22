@@ -33,27 +33,21 @@
 \newcommand\titm[1]{{\usefont{T1}{tit}{m}{n} #1 }}
 \newcommand\titsb[1]{{\usefont{T1}{tit}{sb}{n} #1 }}
 \newcommand\titb[1]{{\usefont{T1}{tit}{b}{n} #1 }}
+\makeatletter\newcommand\HUGE{\@setfontsize\Huge{28}{0}}\makeatother
 
 \usepackage{lipsum}
 
-
-\makeatletter\newcommand\HUGE{\@setfontsize\Huge{28}{0}}\makeatother
-
 \begin{document}
     \newgeometry{margin=2em}
-    \input{titre.tex}
+    \input{tex/titre.tex}
     \restoregeometry
     \newgeometry{bottom=10em}
 
-    \input{affidavit.tex}
+    \input{tex/licence.tex}
 
-	\chapter*{Résumé}					%% résumé
-    \input{resume}
-\begingroup % permet de garder
-\let\clearpage\relax % la LOF et la LOT sur la même
-~\vfill
-	\chapter*{Abstract}					%% résumé
-    \input{abstract}
-\endgroup % page
+	\chapter*{Résumés}
+    \input{tex/resume}
+  \chapter*{Abstract}
+    \input{tex/abstract}
 
 \end{document}
