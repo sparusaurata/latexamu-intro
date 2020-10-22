@@ -1,0 +1,59 @@
+\documentclass[paper=a4,fontsize=12pt,DIV=calc]{scrreprt}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english,french]{babel}
+\usepackage[babel]{csquotes}
+\MakeAutoQuote{«}{»}	
+
+\usepackage[a4paper, pass]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage[colorlinks=true, urlcolor=blue]{hyperref}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\definecolor{blueamu}{RGB}{0, 101, 189}
+\definecolor{cyanamu}{RGB}{61, 183, 228}
+\newcommand{\dhorline}[3][0]{%
+    \tikz[baseline=-2pt]{\path[decoration={markings, 
+      mark=between positions 0 and 1 step 2*#3
+      with {\node[color=blueamu, fill, circle, minimum width=#3, inner sep=0pt, anchor=south west] {};}},postaction={decorate}]  (0,#1) -- ++(#2,0);}}
+\newcommand{\dvertline}[3][0]{%
+    \tikz[baseline=2em]{\path[decoration={markings,
+      mark=between positions 0 and 1 step 2*#2
+      with {\node[color=black!50, fill, circle, minimum width=#2, inner sep=0pt, anchor=south west] {};}},postaction={decorate}] (0, #1) -- ++(0,#3);}}  
+
+\graphicspath{{fig/}{logotypes/}}
+
+\newcommand\titel[1]{{\usefont{T1}{tit}{el}{n} #1 }}
+\newcommand\titl[1]{{\usefont{T1}{tit}{l}{n} #1 }}
+\newcommand\titm[1]{{\usefont{T1}{tit}{m}{n} #1 }}
+\newcommand\titsb[1]{{\usefont{T1}{tit}{sb}{n} #1 }}
+\newcommand\titb[1]{{\usefont{T1}{tit}{b}{n} #1 }}
+
+\usepackage{lipsum}
+
+
+\makeatletter\newcommand\HUGE{\@setfontsize\Huge{28}{0}}\makeatother
+
+\begin{document}
+    \newgeometry{margin=2em}
+    \input{titre.tex}
+    \restoregeometry
+    \newgeometry{bottom=10em}
+
+    \input{affidavit.tex}
+
+	\chapter*{Résumé}					%% résumé
+    \input{resume}
+\begingroup % permet de garder
+\let\clearpage\relax % la LOF et la LOT sur la même
+~\vfill
+	\chapter*{Abstract}					%% résumé
+    \input{abstract}
+\endgroup % page
+
+\end{document}
