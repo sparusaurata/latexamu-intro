@@ -1,1 +1,3 @@
-latexamu-intro
+## Title pages only
+
+Mandatory introductory pages
