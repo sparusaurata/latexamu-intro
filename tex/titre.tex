@@ -74,27 +74,22 @@
 	\end{minipage}\hfill
 	\begin{minipage}[t]{.52\linewidth}
 	    \vspace{.5em}
-    	\titb{\small Composition du jury}
-
-	    \vspace{1em}
-    	\titel{
-        \begin{tabular}{p{12em} p{9.5em}}
-        	Prénom NOM & Rapporteur·e \\
-        	Affiliation \\
-        	\\
-        	Prénom NOM & Rapporteur·e \\
-        	Affiliation \\
-            \\
-            Prénom NOM & Examinateur·rice \\
-        	Affiliation \\
-            \\
-        	Prénom NOM & Président·e du jury \\
-        	Affiliation \\
-            \\
-        	Prénom NOM & Directeur·rice de thèse \\
-        	Affiliation \\
-        \end{tabular}
-        }
+    	\titb{Composition du jury}
+		
+		\newcommand{\jury}[3]{%
+			\vspace{1em}%
+			\titl{#1}\hfill
+			\titel{#3}\\
+			\titel{#2}\par
+		}
+	    
+	    \jury{Prénom NOM}{Affiliation}{Rapporteur·e}
+    	\jury{Prénom NOM}{Affiliation}{Rapporteur·e}
+    	\jury{Prénom NOM}{Affiliation}{Président·e du jury}
+    	\jury{Prénom NOM}{Affiliation}{Examinateur·ice}
+    	\jury{Prénom NOM}{Affiliation}{Examinateur·ice}
+    	\jury{Prénom NOM}{Affiliation}{Directeur·ice de thèse}
+    	\jury{Prénom NOM}{Affiliation}{Directeur·ice de thèse}
 	\end{minipage}\hfill
 \end{center}       
 
@@ -109,9 +104,6 @@
 	\end{minipage}\hfill
 	\begin{minipage}[c]{.25\linewidth}
 		\centering\includegraphics[height=5em]{example-image-c} 
-	\end{minipage}\hfill
-	\begin{minipage}[c]{.25\linewidth}
-		\centering\includegraphics[height=5em]{example-image-c}
 	\end{minipage}\hfill
 \end{center}
 
