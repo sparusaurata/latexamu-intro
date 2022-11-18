@@ -34,7 +34,8 @@
 	% Signature : remplacer example-image-a par le chemin vers une image
 	% contenant votre signature.
 	% --------------------------------------------------------------------------
-	\includegraphics[width=120pt,height=40pt]{example-image-a}
+	\tikz{\node[rectangle, draw, minimum width=4cm, minimum height=2cm] (r) at 
+	(0,0) {signature};}
 	% --------------------------------------------------------------------------
 	\end{flushright}
 \end{french}
@@ -70,7 +71,8 @@
 	
 	\begin{flushright}
 	% --------------------------------------------------------------------------
-	\includegraphics[width=120pt,height=40pt]{example-image-a}
+	\tikz{\node[rectangle, draw, minimum width=4cm, minimum height=2cm] (r) at 
+	(0,0) {signature};}
 	% --------------------------------------------------------------------------
 	\end{flushright}
 \fi
